@@ -466,8 +466,8 @@ def publisher_policy(endpoints, observed, parameters, rmw, node_instances):
 
 
 class CameraReceiver(Node):
-    def __init__(self, args):
-        super().__init__('yolo_depth')
+    def __init__(self, args, node_name='yolo_depth'):
+        super().__init__(node_name)
         self.args, self.lock = args, threading.Lock()
         self.latest, self.infos = {}, {}
         self.source_observations = {}
